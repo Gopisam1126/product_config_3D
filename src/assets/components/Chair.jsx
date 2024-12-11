@@ -6,8 +6,11 @@ Command: npx gltfjsx@6.5.3 public/models/chair.gltf
 
 import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
+import { useCustomization } from "../context/customization";
 
 function Chair(props) {
+  const { material } = useCustomization();
+
   const ltProps = useTexture({
     map: "./textures/leather/Leather_Padded_001_basecolor.jpg",
     displacementMap: "./textures/leather/Leather_Padded_001_height.png",
@@ -46,10 +49,16 @@ function Chair(props) {
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Chair.geometry}>
-        <meshStandardMaterial {...ltProps} displacementScale={0} />
+        <meshStandardMaterial
+          {...(material === "leather" ? ltProps : ftProps)}
+          displacementScale={0}
+        />
       </mesh>
       <mesh geometry={nodes.Cushion.geometry} position={[0, 0.064, 0.045]}>
-        <meshStandardMaterial {...ftProps} displacementScale={0} />
+        <meshStandardMaterial
+          {...(material === "fabric" ? ftProps : ltProps)}
+          displacementScale={0}
+        />
       </mesh>
       <mesh geometry={nodes.Legs1.geometry} material={materials.Legs} />
       <mesh

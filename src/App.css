@@ -1,7 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 * {
   height: 100vh;
   width: 100vw;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.config-main-s {
+  position: fixed;
+  top: 10rem;
+  left: 70rem;
+  height: 20rem;
+  width: 25rem;
+  padding: 2rem;
+  color: aliceblue;
+  user-select: none;
+  font-family: "Itim", serif;
+}
+.config-main-s h1, .ctl-leather, .ctl-fabric {
+  width: fit-content;
+}
+.config-main-s h1 {
+  height: auto;
+}
+
+.config-texture-labels {
+  display: flex;
+  gap: 6rem;
+  width: 20rem;
+  height: fit-content;
+  margin-top: 1.2rem;
+}
+.ctl-leather, .ctl-fabric {
+  height: fit-content;
+  font-size: 1.3rem;
+  transition: all 0.2s ease-in-out;
+}
+.ctl-fabric:hover, .ctl-leather:hover {
+  opacity: 1;
+  cursor: pointer;
 }
