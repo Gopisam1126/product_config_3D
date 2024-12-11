@@ -55,10 +55,7 @@ function Chair(props) {
         />
       </mesh>
       <mesh geometry={nodes.Cushion.geometry} position={[0, 0.064, 0.045]}>
-        <meshStandardMaterial
-          {...(material === "fabric" ? ftProps : ltProps)}
-          displacementScale={0}
-        />
+        <meshStandardMaterial {...ftProps} displacementScale={0} />
       </mesh>
       <mesh geometry={nodes.Legs1.geometry} material={materials.Legs} />
       <mesh

@@ -22,10 +22,10 @@ const Experience = () => {
         shadows={false}
       >
         <Float
-          speed={3}
+          speed={4}
           rotationIntensity={false}
           floatIntensity={1}
-          floatingRange={[0, 0.5]}
+          floatingRange={[0, 0.3]}
         >
           <Chair />
         </Float>
