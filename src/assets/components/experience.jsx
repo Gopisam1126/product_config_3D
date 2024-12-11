@@ -5,13 +5,9 @@ import {
   PresentationControls,
   Stage,
 } from "@react-three/drei";
-import { useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import Chair from "./Chair";
 
 const Experience = () => {
-
-    const gltf = useLoader(GLTFLoader, './models/chair.gltf')
-
   return (
     <PresentationControls
       speed={1.5}
@@ -31,11 +27,7 @@ const Experience = () => {
           floatIntensity={1}
           floatingRange={[0, 0.5]}
         >
-          {/* <mesh>
-            <boxGeometry args={[2, 2, 2]} />
-            <meshNormalMaterial />
-          </mesh> */}
-          <primitive object={gltf.scene} />
+          <Chair />
         </Float>
       </Stage>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>

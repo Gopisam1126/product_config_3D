@@ -7,10 +7,11 @@ function App() {
   return (
     <>
       <Canvas style={{
-        background: "#000"
+        background: "#101010"
       }}>
         <ambientLight intensity={0.2}/>
         <directionalLight intensity={3} position={[1, 2, 4]}/>
+        <fog attach="fog" args={['#101010', 5, 20]}/>
         <Experience/>
       </Canvas>
     </>
