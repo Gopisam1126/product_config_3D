@@ -13,7 +13,6 @@ function App() {
           style={{
             background: "#101010",
           }}
-          camera={{ position: [-2, 2, 3] }}
         >
           <ambientLight intensity={0.2} />
           <directionalLight intensity={3} position={[1, 2, 4]} />

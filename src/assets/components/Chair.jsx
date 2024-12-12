@@ -9,10 +9,10 @@ import * as THREE from "three";
 import { useCustomization } from "../context/customization";
 
 function Chair(props) {
-  const { material, legs } = useCustomization();
+  const { material, legs, chairColor } = useCustomization();
 
   const ltProps = useTexture({
-    map: "./textures/leather/Leather_Padded_001_basecolor.jpg",
+    // map: "./textures/leather/Leather_Padded_001_basecolor.jpg",
     displacementMap: "./textures/leather/Leather_Padded_001_height.png",
     normalMap: "./textures/leather/Leather_Padded_001_normal.jpg",
     roughnessMap: "./textures/leather/Leather_Padded_001_roughness.jpg",
@@ -47,11 +47,12 @@ function Chair(props) {
 
   const { nodes, materials } = useGLTF("./models/chair.gltf");
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} rotation={[0, 0.3, 0]}>
       <mesh geometry={nodes.Chair.geometry}>
         <meshStandardMaterial
           {...(material === "leather" ? ltProps : ftProps)}
           displacementScale={0}
+          color={chairColor.color}
         />
       </mesh>
       <mesh geometry={nodes.Cushion.geometry} position={[0, 0.064, 0.045]}>
@@ -68,7 +69,7 @@ function Chair(props) {
       <mesh
         geometry={nodes.Legs2.geometry}
         material={materials.Legs}
-        isible={legs === "classic" ? false : true}
+        visible={legs === "classic" ? true : false}
       />
       <mesh />
     </group>

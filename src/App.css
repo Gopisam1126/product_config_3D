@@ -48,3 +48,24 @@
   opacity: 1;
   cursor: pointer;
 }
+.item-config-color {
+  display: flex;
+  width: 21rem;
+  height: auto;
+}
+.config-color-labels {
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
+  /* width: 10rem; */
+  width: 100%;
+  height: auto;
+}
+.config-color-labels:hover{
+  cursor: pointer;
+}
+.color-i {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+}
