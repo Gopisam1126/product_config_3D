@@ -7,11 +7,15 @@
   box-sizing: border-box;
 }
 
+.item-config {
+  width: 21rem;
+  height: auto;
+}
 .config-main-s {
   position: fixed;
   top: 10rem;
   left: 70rem;
-  height: 20rem;
+  height: auto;
   width: 25rem;
   padding: 2rem;
   color: aliceblue;
@@ -23,6 +27,9 @@
 }
 .config-main-s h1 {
   height: auto;
+}
+.item-config-h {
+  margin-top: 1.2rem;
 }
 
 .config-texture-labels {

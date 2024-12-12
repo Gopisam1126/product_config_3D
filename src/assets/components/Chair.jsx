@@ -9,7 +9,7 @@ import * as THREE from "three";
 import { useCustomization } from "../context/customization";
 
 function Chair(props) {
-  const { material } = useCustomization();
+  const { material, legs } = useCustomization();
 
   const ltProps = useTexture({
     map: "./textures/leather/Leather_Padded_001_basecolor.jpg",
@@ -55,14 +55,22 @@ function Chair(props) {
         />
       </mesh>
       <mesh geometry={nodes.Cushion.geometry} position={[0, 0.064, 0.045]}>
-        <meshStandardMaterial {...ftProps} displacementScale={0} />
+        <meshStandardMaterial
+          {...(material === "fabric" ? ltProps : ftProps)}
+          displacementScale={0}
+        />
       </mesh>
-      <mesh geometry={nodes.Legs1.geometry} material={materials.Legs} />
+      <mesh
+        geometry={nodes.Legs1.geometry}
+        material={materials.Legs}
+        visible={legs === "design" ? true : false}
+      />
       <mesh
         geometry={nodes.Legs2.geometry}
         material={materials.Legs}
-        visible={false}
+        isible={legs === "classic" ? false : true}
       />
+      <mesh />
     </group>
   );
 }

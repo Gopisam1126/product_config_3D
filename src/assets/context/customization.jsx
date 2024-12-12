@@ -6,8 +6,9 @@ const CustContext = createContext({});
 
 export function CustProvider(props) {
   const [material, setMaterial] = useState("leather");
+  const [legs, setLegs] = useState("design");
   return (
-    <CustContext.Provider value={{ material, setMaterial }}>
+    <CustContext.Provider value={{ material, setMaterial, legs, setLegs }}>
       {props.children}
     </CustContext.Provider>
   );
