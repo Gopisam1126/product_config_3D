@@ -13,8 +13,8 @@
 }
 .config-main-s {
   position: fixed;
-  top: 10rem;
-  left: 70rem;
+  top: 5rem;
+  left: 5rem;
   height: auto;
   width: 25rem;
   padding: 2rem;
@@ -53,9 +53,13 @@
   width: 21rem;
   height: auto;
 }
+.cc-config {
+  margin-bottom: 1.2rem;
+}
 .config-color-labels {
   display: flex;
   flex-direction: column ;
+  gap: 0.8rem;
   align-items: center;
   /* width: 10rem; */
   width: 100%;

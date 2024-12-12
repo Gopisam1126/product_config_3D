@@ -9,7 +9,7 @@ import * as THREE from "three";
 import { useCustomization } from "../context/customization";
 
 function Chair(props) {
-  const { material, legs, chairColor } = useCustomization();
+  const { material, legs, chairColor, cushionColor } = useCustomization();
 
   const ltProps = useTexture({
     // map: "./textures/leather/Leather_Padded_001_basecolor.jpg",
@@ -29,7 +29,7 @@ function Chair(props) {
   ltProps.aoMap.wrapS = ltProps.aoMap.wrapT = THREE.RepeatWrapping;
 
   const ftProps = useTexture({
-    map: "./textures/fabric/Sci-Fi_Padded_Fabric_004_basecolor.jpg",
+    // map: "./textures/fabric/Sci-Fi_Padded_Fabric_004_basecolor.jpg",
     displacementMap: "./textures/fabric/Sci-Fi_Padded_Fabric_004_height.png",
     normalMap: "./textures/fabric/Sci-Fi_Padded_Fabric_004_normal.jpg",
     roughnessMap: "./textures/fabric/Sci-Fi_Padded_Fabric_004_roughness.jpg",
@@ -59,6 +59,7 @@ function Chair(props) {
         <meshStandardMaterial
           {...(material === "fabric" ? ltProps : ftProps)}
           displacementScale={0}
+          color={cushionColor.color}
         />
       </mesh>
       <mesh

@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { chairColors, useCustomization } from "../context/customization";
+import { chairColors, cushionColors, useCustomization } from "../context/customization";
 
 function Configurator() {
   const {
@@ -73,7 +72,7 @@ function Configurator() {
 
         {/* Chair color configurator */}
 
-        <h1 className="item-config-h legs-config">Chair color</h1>
+        <h1 className="item-config-h cc-config">Chair color</h1>
         <div className="item-config-color">
           {chairColors.map((color, i) => (
             <div
@@ -97,6 +96,29 @@ function Configurator() {
         </div>
 
         {/* cushion color config */}
+
+        <h1 className="item-config-h cc-config">Cushion color</h1>
+        <div className="item-config-color">
+          {cushionColors.map((color, i) => (
+            <div
+              className="config-color-labels"
+              key={i}
+              onClick={() => setCushionColor(color)}
+            >
+              <div
+                className="color-i"
+                style={{
+                  backgroundColor: color.color,
+                  border:
+                    color.color === cushionColor.color
+                      ? "solid 2px white"
+                      : "none",
+                }}
+              ></div>
+              <p className="ctl-leather">{color.name}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </>
   );

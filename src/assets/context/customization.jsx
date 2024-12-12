@@ -21,10 +21,10 @@ export const cushionColors = [
 ];
 
 export function CustProvider(props) {
-  const [material, setMaterial] = useState("leather");
+  const [material, setMaterial] = useState("fabric");
   const [legs, setLegs] = useState("design");
-  const [chairColor, setChairColor] = useState(chairColors[0]);
-  const [cushionColor, setCushionColor] = useState(cushionColors[0]);
+  const [chairColor, setChairColor] = useState(chairColors[3]);
+  const [cushionColor, setCushionColor] = useState(cushionColors[2]);
   return (
     <CustContext.Provider
       value={{
